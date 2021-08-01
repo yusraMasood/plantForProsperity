@@ -4,7 +4,7 @@ const width = Dimensions.get('window').width-30;
 import {Context as AuthContext} from '../../context/AuthContext'
 import api from '../../constants/api'
 export default function GrowerHome ({navigation}) {
-  const message = "May the last Ashrah becomes the source of mughfirah for all of us. Share this prayer with everyone you know so that we can maximize the impact. Little deeds go a long way. "
+  const message = "PRICE Organization."
   const [plants, setPlants] = useState([])
   const {state:{userdata}} = useContext(AuthContext);
   useEffect(() => {

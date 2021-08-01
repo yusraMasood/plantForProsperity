@@ -15,6 +15,13 @@ export default function GrowerHome ({navigation}) {
         img: require('../../assets/Images/pack.png'),
         src: 'ScanCode'
       }, 
+
+      {
+        id: 3,
+        name:"Reports",
+        src:"SoilHealthLabReport",
+        img: require('../../assets/Images/pack.png'),
+      }
     
   ]
   
@@ -29,7 +36,9 @@ export default function GrowerHome ({navigation}) {
         navigation.navigate('AgronomistHome')
         //navigate
         break;
-       
+      case "SoilHealthLabReport":
+        navigation.navigate("SoilHealthLabReport")
+        break;
       default:
       //whatever you want
     }

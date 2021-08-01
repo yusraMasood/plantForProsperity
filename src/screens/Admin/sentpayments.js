@@ -26,9 +26,9 @@ function PaymentScreen({ navigation, route }) {
           fetch(`${api}/paymentinsert`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
-              console.log(result, "Result")
+              alert("Payment sent Successfully;")
           }).catch((err) => {
-            console.log(err)
+            alert("Payment sent failed")
           })
     }
   return (
@@ -42,7 +42,7 @@ function PaymentScreen({ navigation, route }) {
                 value={user.username}
                 placeholder='Enter username'
                 autoCapitalize="none"
-                editable={false}
+                editable={true}
             />
              <Text style={styles.text}> Reciever Account Number</Text>
             <TextInput
@@ -50,7 +50,7 @@ function PaymentScreen({ navigation, route }) {
                 value={user.accountnumber}
                 placeholder='Enter Account Number'
                 autoCapitalize="none"
-                editable={false}
+                editable={true}
             />
 
              <Text style={styles.text}>Sender Name</Text>

@@ -4,7 +4,7 @@ const width = Dimensions.get('window').width-30;
 import {Context as AuthContext} from '../../context/AuthContext'
 import api from '../../constants/api'
 export default function ViewAllUsers ({navigation}) {
-    const message = "May the last Ashrah becomes the source of mughfirah for all of us. Share this prayer with everyone you know so that we can maximize the impact. Little deeds go a long way. "
+    const message = "PRICE Organization"
     const [plants, setPlants] = useState([])
     const {state:{userdata}} = useContext(AuthContext);
   
@@ -33,8 +33,8 @@ const Card = ({user})=> {
   
   return (
     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("SoilMessage",{user})} >
-      <Image source={{uri:user.image}} style={{width:40, height:40 , borderRadius:80, backgroundColor:"red"}} />
-      <View style={{marginLeft:10}}>
+      <Image source={{uri:user.image}} style={{width:40, height:40 , borderRadius:80,marginLeft: 5, backgroundColor:"red"}} />
+      <View style={{marginLeft:20}}>
         <Text style={{color:"black"}}>Name: {user.username} </Text>
         <Text style={{color:"black"}}>Role: {user.role} </Text>
         <Text style={{color:"black"}}>Area: {user.area} </Text>
@@ -47,7 +47,7 @@ const Card = ({user})=> {
     <ImageBackground source={require('../../assets/Images/pdflowersetproject10-adj-38_2.jpg')} style={styles.container}> 
         <SafeAreaView style={{flex: 1, paddingHorizontal: 20, backgroundColor: 'white'}}>
         <View style={styles.header}>
-          <Text style={{fontSize: 38, color: '#00B761', fontWeight: 'bold'}}>
+          <Text style={{fontSize: 38, color: '#FF0000', fontWeight: 'bold'}}>
            Plant For Properity
           </Text>
         </View>

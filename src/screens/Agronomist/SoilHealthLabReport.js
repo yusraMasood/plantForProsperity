@@ -1,11 +1,12 @@
 import React,{useEffect, useContext, useState} from 'react';
-import { Text,Dimensions,View,SafeAreaView, Linking, FlatList,TouchableOpacity ,Image, StyleSheet} from 'react-native';
+import { Text,Dimensions,View, Linking, FlatList,TouchableOpacity ,SafeAreaView, StyleSheet} from 'react-native';
 import api from '../../constants/api';
 import {Context as AuthContext} from '../../context/AuthContext'
 const width = Dimensions.get('window').width-30;
 function HomeScreen({ navigation }) {
-const {state:{userdata}} = useContext(AuthContext);
-const [data, setData] = useState([]);
+  const {state:{userdata}} = useContext(AuthContext);
+  const [data, setData] = useState([]);
+  
   
   useEffect(() =>{
     var myHeaders = new Headers();
@@ -14,12 +15,12 @@ const [data, setData] = useState([]);
         method: 'POST',
         headers:myHeaders,
         body:JSON.stringify({
-          id:userdata.id
+          area:userdata.area
         }),
         redirect: 'manual'
       };
  
-    fetch(`${api}/getpackages`, requestOptions)
+    fetch(`${api}/getdatasoilhealthlabforagrnomist`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       setData(result)
@@ -33,11 +34,11 @@ const [data, setData] = useState([]);
     return (
       <SafeAreaView style={styles.card}>
         <View style={{marginLeft:10}}>
-          <Text style={{color:"black"}}>Name: {code.name} </Text>
-          <Text style={{color:"black"}}>Duration: {code.duration} </Text>
-          <Text style={{color:"black"}}>Quantity: {code.quantity} </Text>
-          <Text style={{color:"black"}}>Price: {code.price} </Text>
-          <TouchableOpacity style={{color:"black"}} onPress={() => Linking.openURL(`${code.pdfpath}`)}>
+          <Text style={{color:"black"}}>ec: {code.ec} </Text>
+          <Text style={{color:"black"}}>Ph: {code.ph} </Text>
+          <Text style={{color:"black"}}>sampleCollected: {code.sampleCollected} </Text>
+          <Text style={{color:"black"}}>sampleDate: {code.sampleDate} </Text>
+          <TouchableOpacity style={{color:"black"}} onPress={() => Linking.openURL(`${code.uri}`)}>
           <Text>Click Here</Text>
     </TouchableOpacity>
         </View>
@@ -83,8 +84,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
     padding:2,
-    height:130,
-   // backgroundColor:"red"
-    backgroundColor: 'gray',
+    height:200,
+    backgroundColor: 'grey',
   }
 });

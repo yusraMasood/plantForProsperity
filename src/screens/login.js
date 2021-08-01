@@ -6,9 +6,9 @@ import api from '../constants/api'
 export default function Login ({navigation}) {
   const {signin} = useContext(AuthContext)
   const [selectedValue, setSelectedValue] = useState("soilhealthlab");
-  let [userName, setUserName] = useState('soilhealthlab');
-  let [userPassword, setPassword] = useState('123456');
-  let [id, setID] = useState("109")
+  let [userName, setUserName] = useState('');
+  let [userPassword, setPassword] = useState('');
+  let [id, setID] = useState("")
   
     let login_user = () => {
     if (userName === '' || userPassword === '') {
@@ -174,7 +174,7 @@ return(
             style={styles.input}
             value={userPassword}
             placeholder='Password/پاس ورڈ'
-            secureTextEntry={false}
+            secureTextEntry={true}
             autoCapitalize="none"
             onChangeText={
               (userPassword) => setPassword(userPassword)

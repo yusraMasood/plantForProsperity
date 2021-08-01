@@ -68,7 +68,8 @@ const submitdata = () => {
       sampleCollected:sampleCollected,
       ec:ec,
       ph:ph,
-      userid:userdata.id
+      userid:userdata.id,
+      area:userdata.area
     }),
     redirect: 'manual'
   };
@@ -100,13 +101,13 @@ const submitdata = () => {
           <TouchableOpacity 
               style={styles.loginBtn}
               onPress={() => _pickDocument()}
-          ><Text>Upload Pdf</Text>
+          ><Text style={{color: "white"}}>Upload Pdf</Text>
           </TouchableOpacity>
           {resulturi!==undefined?
           <TouchableOpacity 
               style={styles.loginBtn} 
               onPress={() => submitdata()} >
-            <Text>Submit</Text>
+            <Text style={{color: "white"}}>Submit</Text>
           </TouchableOpacity>
           :null}
           </ScrollView>

@@ -33,10 +33,10 @@ import AgronomistHome from './src/screens/Agronomist/AgronomistHome'
 import AgrnomistNotifications from './src/screens/Agronomist/Notifications'
 import AgrnomistDashboard from './src/screens/Agronomist/Home'
 import AgrnomistPackgeDesing from './src/screens/Agronomist/DesignPackage'
-
+import SoilHealthLabReport from './src/screens/Agronomist/SoilHealthLabReport'
 
 // sponser
-import SponsorHome from './src/screens/Sponsor/SponsorHome'
+// import SponsorHome from './src/screens/Sponsor/SponsorHome'
 
 // vendor
 import VendorHome from './src/screens/Vendor/VendorHome'
@@ -61,7 +61,7 @@ const  App = () =>  {
   const AdminStack = createStackNavigator();
   const GrowerStack = createStackNavigator();
   const AgronomistStack = createStackNavigator();
-  const SponsorStack = createStackNavigator();
+  // const SponsorStack = createStackNavigator();
   const VendorStack = createStackNavigator();
   const SoilHealthStack = createStackNavigator();
   
@@ -213,18 +213,19 @@ const  App = () =>  {
         <AgronomistStack.Screen name="AgronomistHome" component={AgronomistHome} />
         <AgronomistStack.Screen name="AgrnomistDashboard" component={AgrnomistDashboard} />
         <AgronomistStack.Screen name="AgrnomistPackgeDesing" component={AgrnomistPackgeDesing} />
+        <AgronomistStack.Screen name="SoilHealthLabReport" component={SoilHealthLabReport} />
       </AgronomistStack.Navigator>
     )
   }
 
   
-  const SponsorScreens = ({navigation}) => {
-    return(
-      <SponsorStack.Navigator>
-        <SponsorStack.Screen name="sponsorhome" component={SponsorHome} />
-      </SponsorStack.Navigator>
-    )
-  }
+  // const SponsorScreens = ({navigation}) => {
+  //   return(
+  //     <SponsorStack.Navigator>
+  //       <SponsorStack.Screen name="sponsorhome" component={SponsorHome} />
+  //     </SponsorStack.Navigator>
+  //   )
+  // }
 
 
   const SoilhealthLabTab = createBottomTabNavigator();
@@ -331,8 +332,8 @@ const  App = () =>  {
          <AdminDrawer.Screen name="Logout"  component={Logout} />
       </AdminDrawer.Navigator>
       
-      :userdata.role === "sponsor"
-      ?<SponsorScreens />
+  //    :userdata.role === "sponsor"
+    //  ?<SponsorScreens />
 
       :userdata.role === "grower"
       ?<GrowerDrawer.Navigator>

@@ -82,8 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
     padding:2,
-    height:130,
-   // backgroundColor:"red"
-    backgroundColor: 'gray',
+    height:200,
+    backgroundColor: 'grey',
   }
 });
